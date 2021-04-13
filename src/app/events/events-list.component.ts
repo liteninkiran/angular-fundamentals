@@ -10,7 +10,7 @@ import { Component } from '@angular/core';
 
             <hr>
 
-            <event-thumbnail [event]="eventObj"></event-thumbnail>
+            <event-thumbnail (eventClick)="handleEventClicked($event)" [event]="eventObj"></event-thumbnail>
 
         </div>
     `,
@@ -32,5 +32,10 @@ export class EventsListComponent
             city: 'London',
             country: 'England'
         }
+    }
+
+    handleEventClicked(data)
+    {
+        console.log('Received:', data);
     }
 }
