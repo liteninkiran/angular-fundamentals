@@ -9,8 +9,6 @@ import { Component, Input } from '@angular/core';
         .thumbnail { min-height: 210px; }
         .pad-left { margin-left: 10px; }
         .well div { color: #bbb; }
-        .green { color: #003300 !important }
-        .bold { font-weight: bold; }
 
     `]
 })
@@ -42,4 +40,19 @@ export class EventThumbnailComponent
         //return {green: isEarlyStart, bold: isEarlyStart};
 
     }
+
+    getStartTimeStyle():any
+    {
+        const isEarlyStart = this.eventObj && this.eventObj.time === '8:00 am';
+
+        if(isEarlyStart)
+        {
+            // Return as object
+            return {'color': '#003300', 'font-weight': 'bold'};
+
+        }
+
+        // Return empty object
+        return {};
+    }    
 }
