@@ -6,12 +6,15 @@
     <div>Time: {{ eventObj?.time }}</div>
     <div>Price: £{{ eventObj?.price }}</div>
 
-    <div>
+    <div *ngIf="eventObj?.location">
     
         <span>Location: {{ eventObj?.location?.address }}</span>
         <span class="pad-left">{{ eventObj?.location?.city }}, {{ eventObj?.location?.country }}</span>
-        <div>Online URL: {{ event?.onlineUrl }}</div>
-    
+
+    </div>
+
+    <div *ngIf="eventObj?.onlineUrl">
+        Online URL: {{ eventObj?.onlineUrl }}
     </div>
 
 <div>

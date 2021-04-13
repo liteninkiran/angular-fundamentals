@@ -97,11 +97,6 @@ export class EventsListComponent
             price: 950.00,
             onlineUrl: 'http://ng-nl.org',
             imageUrl: '/assets/images/ng-nl.png',
-            /*location: {
-                address: 'The NG-NL Convention Center & Scuba Shop',
-                city: 'Amsterdam',
-                country: 'Netherlands'
-            },*/
             sessions: [
                 {
                     id: 1,
