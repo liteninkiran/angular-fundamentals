@@ -3,7 +3,8 @@
     <h2>{{ eventObj?.name }}</h2>
 
     <div>Date: {{ eventObj?.date }}</div>
-    <div [ngSwitch]="eventObj?.time">
+
+    <div [ngClass]="getStartTimeClass()" [ngSwitch]="eventObj?.time">
         Time: {{ eventObj?.time }}
         <span *ngSwitchCase="'8:00 am'">(Early Start)</span>
         <span *ngSwitchCase="'10:00 am'">(Late Start)</span>
