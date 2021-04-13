@@ -10,7 +10,11 @@ import { Component } from '@angular/core';
 
             <hr>
 
-            <event-thumbnail [event]="eventObj"></event-thumbnail>
+            <event-thumbnail #thumbnail [event]="eventObj"></event-thumbnail>
+
+            <h3>{{ thumbnail.someProperty }}</h3>
+
+            <button class="btn btn-primary" (click)="thumbnail.logFoo()">Click Me</button>
 
         </div>
     `,
