@@ -10,6 +10,8 @@ import { EventService } from './events/shared/event.service';
 import { EventDetailsComponent } from './events/event-details/event-details.component';
 import { appRoutes } from './routes';
 import { CreateEventComponent } from './events/create-event.component';
+import { Error404Component } from './errors/404.component';
+import { EventRouteActivator } from './events/event-details/event-route-activator.service';
 
 @NgModule(
 {
@@ -21,6 +23,7 @@ import { CreateEventComponent } from './events/create-event.component';
         EventDetailsComponent,
         CreateEventComponent,
         NavBarComponent,
+        Error404Component,
     ],
     imports:
     [
@@ -33,7 +36,8 @@ import { CreateEventComponent } from './events/create-event.component';
     ],
     providers:
     [
-        EventService
+        EventService,
+        EventRouteActivator,
     ],
 })
 
