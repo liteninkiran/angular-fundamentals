@@ -3,7 +3,6 @@ import { EventService } from './shared/event.service';
 
 @Component(
 {
-    selector: 'events-list',
     templateUrl: './events-list.component.html',
 })
 
