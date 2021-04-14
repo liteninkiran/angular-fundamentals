@@ -28,6 +28,12 @@ export const appRoutes:Routes =
         canActivate: [EventRouteActivator]
     },
 
+    // User
+    {
+        path: 'user',
+        loadChildren: './user/user.module#UserModule',
+    },    
+
     // Error
     {
         path: '404',
