@@ -21,6 +21,7 @@ import { NavBarComponent } from './nav/navbar.component';
 import { appRoutes } from './routes';
 import { Error404Component } from './errors/404.component';
 import { AuthService } from './user/auth.service';
+import { CollapsibleWellComponent } from './common/collapsible-well.component';
 
 @NgModule(
 {
@@ -35,6 +36,7 @@ import { AuthService } from './user/auth.service';
         Error404Component,
         CreateSessionComponent,
         SessionListComponent,
+        CollapsibleWellComponent,
     ],
     imports:
     [
