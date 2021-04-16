@@ -3,12 +3,11 @@ import { Routes } from '@angular/router';
 import
 {
     EventsListComponent,
-    EventThumbnailComponent,
-    EventService,
     EventDetailsComponent,
     CreateEventComponent,
     EventRouteActivator,
     EventListResolver,
+    CreateSessionComponent,
 } from './events/index';
 import { Error404Component } from './errors/404.component';
 
@@ -39,6 +38,11 @@ export const appRoutes:Routes =
         path: 'user',
         loadChildren: './user/user.module#UserModule',
     },    
+
+    {
+        path: 'events/session/new',
+        component: CreateSessionComponent,
+    },
 
     // Error
     {
