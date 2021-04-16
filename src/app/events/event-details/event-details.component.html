@@ -6,7 +6,7 @@
     <!-- Event Name -->
     <div class="row">
         <div class="col-md-11">
-            <h2>{{ event?.name }} </h2>
+            <h2>{{ event?.name | uppercase }} </h2>
         </div>
     </div>
 
@@ -15,9 +15,9 @@
 
         <!-- Date / Time / Price -->
         <div class="col-md-6">
-            <div><strong>Date:</strong> {{ event?.date }}</div>
+            <div><strong>Date:</strong> {{ event?.date | date:'dd/MM/y' }}</div>
             <div><strong>Time:</strong> {{ event?.time }}</div>
-            <div><strong>Price:</strong> ${{ event?.price }}</div>
+            <div><strong>Price:</strong> {{ event?.price | currency:'GBP' }}</div>
         </div>
 
         <!-- Location -->

@@ -1,8 +1,8 @@
 <div [routerLink]="['/events', eventObj.id]" class="well hoverwell thumbnail">
 
-    <h2>{{ eventObj?.name }}</h2>
+    <h2>{{ eventObj?.name | uppercase }}</h2>
 
-    <div>Date: {{ eventObj?.date }}</div>
+    <div>Date: {{ eventObj?.date | date:'dd/MM/y' }}</div>
 
     <div [ngStyle]="getStartTimeStyle()" [ngSwitch]="eventObj?.time">
         Time: {{ eventObj?.time }}
@@ -11,7 +11,7 @@
         <span *ngSwitchDefault>(Normal Start)</span>
     </div>
 
-    <div>Price: £{{ eventObj?.price }}</div>
+    <div>Price: {{ eventObj?.price | currency:'GBP' }}</div>
 
     <div *ngIf="eventObj?.location">
     
