@@ -7,7 +7,7 @@
     <div class="row">
         <div *ngFor="let x of events" class="col-md-5">
             <!-- The [eventObj] in the <event-thumbnail> tag refers to the variable used in 'event-thumbnail.component.html'. Usage: {{ eventObj.name }} -->
-            <event-thumbnail (click)="handleThumbnailClick(x.name)" [eventObj]="x"></event-thumbnail>
+            <event-thumbnail [eventObj]="x"></event-thumbnail>
         </div>
     </div>
 

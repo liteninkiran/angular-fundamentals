@@ -23,7 +23,9 @@ import { appRoutes } from './routes';
 import { Error404Component } from './errors/404.component';
 import { AuthService } from './user/auth.service';
 import { CollapsibleWellComponent } from './common/collapsible-well.component';
-import { ToastrService } from './common/toastr.service';
+import { TOASTR_TOKEN, Toastr } from './common/toastr.service';
+
+let toastr:Toastr = window['toastr'];
 
 @NgModule(
 {
@@ -62,7 +64,10 @@ import { ToastrService } from './common/toastr.service';
             provide: 'canDeactivateCreateEvent',
             useValue: checkDirtyState
         },
-        ToastrService,
+        {
+            provide: TOASTR_TOKEN,
+            useValue: toastr,
+        },
     ],
 })
 
