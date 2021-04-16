@@ -14,6 +14,7 @@ import
     EventListResolver,
     CreateSessionComponent,
     SessionListComponent,
+    DurationPipe,
 } from './events/index';
 
 import { EventsAppComponent } from './events-app.component';
@@ -38,6 +39,7 @@ import { ToastrService } from './common/toastr.service';
         CreateSessionComponent,
         SessionListComponent,
         CollapsibleWellComponent,
+        DurationPipe,
     ],
     imports:
     [
