@@ -34,6 +34,5 @@ export class NavBarComponent
             {
                 this.foundSessions = sessions;
             })
-        console.log(this.foundSessions);
     }
 }

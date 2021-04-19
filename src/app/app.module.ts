@@ -29,6 +29,7 @@ import
     Toastr,
     CollapsibleWellComponent,
     SimpleModalComponent,
+    ModalTriggerDirective,
 } from './common/index';
 
 let toastr:Toastr = window['toastr'];
@@ -50,6 +51,7 @@ let jQuery = window['$'];
         CollapsibleWellComponent,
         DurationPipe,
         SimpleModalComponent,
+        ModalTriggerDirective,
     ],
     imports:
     [
