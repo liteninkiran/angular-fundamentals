@@ -20,7 +20,7 @@ export class ModalTriggerDirective implements OnInit
     {
         this.el.addEventListener('click', e =>
         {
-            this.$('#simple-modal').modal({})
+            this.$(`#${this.modalId}`).modal({})
         })
     }
 }
