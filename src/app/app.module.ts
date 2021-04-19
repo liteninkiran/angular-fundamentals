@@ -27,7 +27,8 @@ import
     JQ_TOKEN,
     TOASTR_TOKEN,
     Toastr,
-    CollapsibleWellComponent
+    CollapsibleWellComponent,
+    SimpleModalComponent,
 } from './common/index';
 
 let toastr:Toastr = window['toastr'];
@@ -48,6 +49,7 @@ let jQuery = window['$'];
         SessionListComponent,
         CollapsibleWellComponent,
         DurationPipe,
+        SimpleModalComponent,
     ],
     imports:
     [
@@ -73,6 +75,10 @@ let jQuery = window['$'];
         {
             provide: TOASTR_TOKEN,
             useValue: toastr,
+        },
+        {
+            provide: JQ_TOKEN,
+            useValue: jQuery,
         },
     ],
 })
