@@ -6,7 +6,7 @@ import { EventService } from '../events/index';
 @Component(
 {
     selector: 'nav-bar',
-    templateUrl: './nav-bar.component.html',
+    templateUrl: './navbar.component.html',
     styles: [`
     
         .nav.navbar-nav { font-size: 15px; }
