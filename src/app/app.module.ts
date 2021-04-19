@@ -16,6 +16,7 @@ import
     SessionListComponent,
     UpvoteComponent,
     DurationPipe,
+    VoterService,
 } from './events/index';
 
 import { EventsAppComponent } from './events-app.component';
@@ -72,6 +73,7 @@ let jQuery = window['$'];
         EventRouteActivator,
         EventListResolver,
         AuthService,
+        VoterService,
         {
             provide: 'canDeactivateCreateEvent',
             useValue: checkDirtyState
