@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, Output } from "@angular/core";
+import { withLatestFrom } from "rxjs/operators";
 
 @Component(
 {
@@ -10,8 +11,13 @@ import { Component, EventEmitter, Input, Output } from "@angular/core";
 export class UpvoteComponent
 {
     @Input() count:number;
-    @Input() voted:boolean;
+    @Input() set voted(val)
+    {
+        this.iconColour = val ? 'red' : 'white';
+    }
     @Output() vote = new EventEmitter();
+
+    iconColour:string;
 
     onClick()
     {
