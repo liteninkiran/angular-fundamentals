@@ -9,6 +9,7 @@ import { EventService } from './shared/event.service';
     [`
         em { float:right; color:#E05C65; padding-left:10px; }
         .error input { background-color: #E3C3C5; }
+        .error textarea { background-color: #E3C3C5; }
 
         .error ::-webkit-input-placeholder { color:#999; }  /*   Safari / iOS   */
         .error ::-moz-placeholder { color:#999; }           /*   Mozilla 19+    */

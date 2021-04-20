@@ -30,11 +30,12 @@
             <em *ngIf="newEventForm.controls.price?.invalid && (newEventForm.controls.price?.touched)">Required</em>
             <input (ngModel)="newEvent.price" name="price" required id="eventPrice" type="text" type="number" class="form-control" placeholder="Event price..." />
         </div>
-        
+
         <!-- Event Location -->
-        <div ngModelGroup="location" validateLocation>
+        <div ngModelGroup="location" validateLocation #locationGroup="ngModelGroup" [ngClass]="{'error': locationGroup?.invalid && locationGroup?.touched}">
             <div class="form-group">
                 <label for="address">Event Location:</label>
+                <em *ngIf="locationGroup?.invalid && locationGroup?.touched">Please enter either Event Location OR the Online URL</em>
                 <input (ngModel)="newEvent.address" name="address" id="address" type="text" class="form-control" placeholder="Address of event..." />
             </div>
             <div class="row">
@@ -48,17 +49,16 @@
         </div>
 
         <!-- Online URL -->
-        <div class="form-group">
+        <div class="form-group" [ngClass]="{'error': locationGroup?.invalid && locationGroup?.touched}">
             <label for="onlineUrl">Online Url:</label>
-            <input (ngModel)="newEvent.onlineUrl" name="onlineUrl" id="onlineUrl" type="text" class="form-control" placeholder="Online Url..." />
+            <input (ngModel)="newEvent.onlineUrl" name="onlineUrl" id="onlineUrl" type="text" class="form-control" placeholder="Online Url..." (change)="locationGroup.control.controls.address.updateValueAndValidity()">
         </div>
 
         <!-- Image -->
         <div class="form-group" [ngClass]="{'error': newEventForm.controls.imageUrl?.invalid && newEventForm.controls.imageUrl?.touched}">
             <label for="imageUrl">Image:</label>
             <em *ngIf="newEventForm.controls.imageUrl?.invalid && newEventForm.controls.imageUrl?.touched && newEventForm.controls.imageUrl?.errors.required">Required</em>
-            <em *ngIf="newEventForm.controls.imageUrl?.invalid && newEventForm.controls.imageUrl?.touched    && newEventForm.controls.imageUrl?.errors.pattern">Must be a png or jpg url</em>
-            <!-- <input (ngModel)="newEvent.imageUrl" name="imageUrl" required pattern=".*\/.*.(png|jpg)" id="imageUrl" type="text" class="form-control" placeholder="url of image..." /> -->
+            <em *ngIf="newEventForm.controls.imageUrl?.invalid && newEventForm.controls.imageUrl?.touched && newEventForm.controls.imageUrl?.errors.pattern">Must be a png or jpg url</em>
             <textarea (ngModel)="newEvent.imageUrl" name="imageUrl" required pattern=".*\/.*.(png|jpg)" id="imageUrl" class="form-control" placeholder="URL of image..."></textarea>
             <img [src]="newEventForm.controls.imageUrl.value" *ngIf="newEventForm.controls.imageUrl?.valid">
         </div>
