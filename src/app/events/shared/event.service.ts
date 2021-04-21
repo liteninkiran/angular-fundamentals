@@ -18,18 +18,9 @@ export class EventService
         return this.http.get<IEvent[]>('/api/events').pipe(catchError(this.handleError<IEvent[]>('getEvents', [])));
     }
 
-    private handleError<T>(operation = 'operation', result?:T)
+    getEvent(id:number):Observable<IEvent>
     {
-        return (error:any):Observable<T> =>
-        {
-            console.error(error);
-            return of(result as T);
-        }
-    }
-
-    getEvent(id:number):IEvent
-    {
-        return EVENTS.find(event => event.id === id);
+        return this.http.get<IEvent>('/api/events/' + id).pipe(catchError(this.handleError<IEvent>('getEvent')));
     }
 
     saveEvent(event)
@@ -73,6 +64,15 @@ export class EventService
         setTimeout(() => { emitter.emit(results) }, 100);
 
         return emitter;
+    }
+
+    private handleError<T>(operation = 'operation', result?:T)
+    {
+        return (error:any):Observable<T> =>
+        {
+            console.error(error);
+            return of(result as T);
+        }
     }
 }
 
