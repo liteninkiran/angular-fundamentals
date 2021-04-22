@@ -22,7 +22,7 @@ export class CreateEventComponent
 {
     newEvent
 
-    isDirty:boolean = true;
+    isDirty = true;
 
     constructor(private eventService: EventService, private router:Router)
     {

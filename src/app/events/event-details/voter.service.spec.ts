@@ -20,7 +20,7 @@ describe('VoterService', () =>
         it('should remove the voter from the list of voters', () =>
         {
             // Create a dummy session object
-            var session =
+            const session =
             {
                 id: 6,
                 voters: ['Joe', 'John'],
@@ -40,7 +40,7 @@ describe('VoterService', () =>
         it('should call http.delete with the right URL', () =>
         {
             // Create a dummy session object
-            var session =
+            const session =
             {
                 id: 6,
                 voters: ['Joe', 'John'],
@@ -65,7 +65,7 @@ describe('VoterService', () =>
         it('should call http.post with the right URL', () =>
         {
             // Create a dummy session object
-            var session =
+            const session =
             {
                 id: 6,
                 voters: ['John'],

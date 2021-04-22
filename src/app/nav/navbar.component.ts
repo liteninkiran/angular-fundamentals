@@ -20,7 +20,7 @@ import { EventService } from '../events/index';
 
 export class NavBarComponent
 {
-    searchTerm:string = "";
+    searchTerm = "";
     foundSessions:ISession[];
 
     constructor(public auth:AuthService, public eventService:EventService)

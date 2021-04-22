@@ -16,13 +16,13 @@ export class AuthService
 
     loginUser(userName: string, password: string)
     {
-        let loginInfo =
+        const loginInfo =
         {
             username: userName,
             password: password,
         };
 
-        let options = 
+        const options = 
         {
             headers: new HttpHeaders({ 'Content-Type': 'application/json' })
         };
@@ -49,7 +49,7 @@ export class AuthService
         this.currentUser.firstName = firstName;
         this.currentUser.lastName = lastName;
 
-        let options =
+        const options =
         {
             headers: new HttpHeaders({ 'Content-Type': 'application/json' })
         };
@@ -61,7 +61,7 @@ export class AuthService
     {
         this.currentUser = undefined;
 
-        let options =
+        const options =
         {
             headers: new HttpHeaders({ 'Content-Type': 'application/json' })
         };

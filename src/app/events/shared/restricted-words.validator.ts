@@ -9,7 +9,7 @@ export function restrictedWords(words)
             return null
         }
 
-        var invalidWords =
+        const invalidWords =
             words.map(w => control.value.includes(w) ? w : null)
                 .filter(w => w != null);
 

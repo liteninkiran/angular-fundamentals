@@ -13,7 +13,7 @@ export class VoterService
 
     }
 
-    deleteVoter(eventId:number, session:ISession, voterName:string)
+    deleteVoter(eventId:number, session:ISession, voterName:string):void
     {
         session.voters = session.voters.filter(voter => voter !== voterName);
 
@@ -24,7 +24,7 @@ export class VoterService
         .subscribe();        
     }
 
-    addVoter(eventId:number, session:ISession, voterName:string)
+    addVoter(eventId:number, session:ISession, voterName:string):void
     {
         session.voters.push(voterName);
 
@@ -36,7 +36,7 @@ export class VoterService
         .subscribe();
     }
 
-    userHasVoted(session:ISession, voterName:string)
+    userHasVoted(session:ISession, voterName:string):boolean
     {
         return session.voters.some(voter => voter === voterName);
     }
