@@ -1,5 +1,6 @@
-import { DebugElement } from "@angular/core";
+import { DebugElement, NO_ERRORS_SCHEMA } from "@angular/core";
 import { ComponentFixture, TestBed } from "@angular/core/testing";
+import { By } from "protractor";
 import { AuthService } from "src/app/user/auth.service";
 import { DurationPipe } from "../shared";
 import { SessionListComponent } from "./session-list.component";
@@ -17,6 +18,9 @@ describe('SessionListComponent', () =>
 
     beforeEach(() =>
     {
+        mockAuthService = { isAuthenticated: () => true, currentUser: { userName: 'Joe' } };
+        mockVoterService = { userHasVoted: () => true };
+
         TestBed.configureTestingModule(
         {
             declarations:
@@ -29,6 +33,10 @@ describe('SessionListComponent', () =>
                 { provide: AuthService, useValue: mockAuthService },
                 { provide: VoterService, useValue: mockVoterService }
             ],
+            schemas:
+            [
+                NO_ERRORS_SCHEMA
+            ]
         });
 
         fixture = TestBed.createComponent(SessionListComponent);
@@ -64,6 +72,9 @@ describe('SessionListComponent', () =>
 
             // Update bindings in template
             fixture.detectChanges();
+
+            // Make assertions
+            expect(element.querySelector('[well-title]').textContent).toContain('Session 1');
         });
     });
 
