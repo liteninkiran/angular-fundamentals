@@ -1,6 +1,7 @@
 import { DebugElement } from "@angular/core";
 import { ComponentFixture, TestBed } from "@angular/core/testing";
 import { AuthService } from "src/app/user/auth.service";
+import { DurationPipe } from "../shared";
 import { SessionListComponent } from "./session-list.component";
 import { VoterService } from "./voter.service";
 
@@ -20,7 +21,8 @@ describe('SessionListComponent', () =>
         {
             declarations:
             [
-                SessionListComponent
+                SessionListComponent,
+                DurationPipe
             ],
             providers:
             [
@@ -38,7 +40,31 @@ describe('SessionListComponent', () =>
 
     describe('initial display', () =>
     {
+        it('should have the correct name', () =>
+        {
+            // Setup the session object
+            component.sessions =
+            [
+                {
+                    name: 'Session 1',
+                    id: 3,
+                    presenter: 'Joe',
+                    duration: 1,
+                    level: 'beginner',
+                    abstract: 'abstract',
+                    voters: ['john', 'bob']
+                }
+            ]
+            component.filterBy = 'all';
+            component.sortBy = 'name';
+            component.eventId = 4;
 
+            // Call ngOnChanges manually
+            component.ngOnChanges();
+
+            // Update bindings in template
+            fixture.detectChanges();
+        });
     });
 
 });
